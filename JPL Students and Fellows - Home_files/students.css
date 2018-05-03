@@ -1,0 +1,133 @@
+﻿/* arrow below large image on students index */
+.pointer_mask { height:25px; z-index:18; position:relative; top:-20px; width:100%; }
+.pointer_mask .arrow_masks { border-right:20px solid white; border-top:20px solid white; border-left:20px solid white; border-bottom:0px; display:inline-block; width:calc(50% - 20px); width:-webkit-calc(50% - 20px); height:100%; background-color:white; }
+.pointer_mask .arrow_mask { display:inline-block; width:20px; height:100%; border-right:20px solid white; border-top:20px solid transparent; border-left:20px solid white; border-bottom:0px solid white; }
+/* about text box */
+.about_textbox { margin: auto; background-color: #f6f6f6; padding: 10px;}
+.about_textbox p {text-align: center; font-color: #76777B; padding: 0 auto 0 auto;}
+/* align items next to each other */
+ul#list_items_inline { list-style: none; text-align: center; }
+ul#list_items_inline li { display: inline-block; position: relative; padding: 20px;}
+ul#list_items_inline img { display: block; margin: 0 auto; margin-bottom: 20px; cursor: pointer; width: 125px; height: 125px; position: relative; overflow: hidden; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
+ul#list_items_inline img a:hover { color: #2f81d5; width: 125px; height: 125px; position: relative; overflow: hidden; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
+ul#list_items_inline li h4 { font-size:18px; font-weight:bold;}
+ul#list_items_inline li a { color: #444444;}
+ul#list_items_inline li a:hover { color: #2f81d5;}
+/* top dropdown nav */
+.head-link ul li:hover > ul { display: block; }
+.head-link ul { list-style: none; position: relative; }
+.head-link ul li { position: relative; float: left; border-top-left-radius: 2px; border-top-right-radius: 2px; width: auto; }
+.head-link ul li:hover { background: #0e74f1; }
+.head-link ul li a:hover { background: #5AA1F5; }
+.head-link ul ul li:last-child:hover { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; }
+.head-link ul li:hover a { color: #fff; }
+.head-link ul li a { display: block; color: #fff; text-decoration: none; }
+.head-link ul ul { display: none; width: 100%; background: #0e74f1; border-radius: 0px; padding: 0; position: absolute; top: 99%; left: 0; text-align: left; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; }
+.head-link ul ul li { width: 100%; float: none; position: relative; padding: 0em; }
+.head-link ul ul li a:hover { background: #5AA1F5; }
+/* header & footer */
+.upper_footer { padding: 3em 0 3em; }
+.lower_footer .credits { width: 100%; text-align: center; position: relative; }
+.lower_footer .nav_container { position: relative; }
+#site_footer .sitemap_title a { color:#fff; }
+.upper_footer h4 { text-align:center; font-size: 22px; font-weight: bold; padding: 2.5em 0 0; color: #fff; }
+/* slideshow */
+.cycle-slideshow img { width: 100%; padding: 0; display: block; }
+.cycle-slideshow img:first-child { position: static; z-index: 100; }/* in case script does not load */
+.cycle-slideshow { width: 100%; display: block; padding: 0; margin: 0 auto; position: relative; }
+/* caption */
+.caption_container { display: block; width: 100%; vertical-align: top;  padding-top: 20px; }
+.caption_container .main_tease { font-weight:bold; font-size:1.6em; margin: 0 0 1em; }
+/* pager */
+nav.slide_nav .prev_btn, nav.slide_nav .next_btn { display: none; }
+nav.slide_nav .set_view_master_nav { top:45%; }
+#ss_nav_container{ text-align: center; }
+.cycle-pagination span {  font-family: arial; font-size: 40px; width: 16px; height: 16px;  color: #BFBFBF; cursor: pointer; }
+.cycle-pagination span.cycle-pager-active { color: #7F7F7F; }
+.cycle-pagination > * { cursor: pointer;}
+.disabled { opacity: .5; filter:alpha(opacity=50); }
+/* sidebar slideshow */
+aside.students_slideshow { height:600px; max-height:600px; overflow-y:auto; }
+aside .cycle-slideshow, aside .cycle-slideshow * { width: 100%; margin-left: 0px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+aside .cycle-slideshow img { width: 100%; padding:0; }
+aside .cycle-slideshow section.slide p { margin-bottom:0; }
+aside .cycle-slideshow section.slide strong:first-child { color:#2a8bef; }
+
+/* page styles */
+#primary_column h2 { font-size:30px; font-weight:bold; }
+#primary_column h3 { font-size:20px; font-weight:bold; }
+p { line-height: 1.5em; }
+.gradient_container_top, .gradient_container_bottom { height: 300px; }
+.gradient_container_top {  
+	background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…gd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0.9)), color-stop(100%, transparent));
+    background: -moz-linear-gradient(rgba(0,0,0,0.9), transparent);
+    background: -webkit-linear-gradient(rgba(0,0,0,0.9), transparent);
+    background: linear-gradient(rgba(0,0,0,0.9), transparent);
+    top: 0;
+}
+.gradient_container_bottom { 
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…gd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0,0,0,0.9)));
+    background: -moz-linear-gradient(transparent, rgba(0,0,0,0.9));
+    background: -webkit-linear-gradient(transparent, rgba(0,0,0,0.9));
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    bottom: 0;
+}
+.fixed-width { max-width: 1024px !important; }
+#students_home article.carousel_item { background-image: url('http://www.jpl.nasa.gov/edu/images/students/welcome_banner_2.jpg'); } /* students index page large image */
+.student-slideshow-section { padding-bottom:40px; }
+.student-slideshow-section > div:first-child { text-align:center; }
+.cycle-slideshow-container { margin: 40px 0 0 0; position: relative; }
+.students_module { padding-top:10px; }
+.module.students_border > .grid_layout { border: 1px solid #ccc; padding:20px; text-align: center; }
+.module > .grid_layout .module_title, .student-slideshow-section .module_title { margin-bottom: 0; }
+.intern_top_desc { padding-bottom: 0; }
+.filter_bar.module, .edu_main_nav_sticky { padding: 0 !important; z-index:1000; }
+.content_page #primary_column { margin-bottom:0; }
+.blue, .button:hover { background-color:#2a8bef !important; }
+.prevwvid_image { margin: 0 auto; }
+aside .alternating_row p { padding: 8px; margin: 0; }
+aside .alternating_row p:nth-child(odd){ background-color:#F8F8F8; }
+form.submit_newsletter, form.submit_newsletter .email_field { color:#444; }
+#secondary_column form.submit_newsletter .email_field { background-color:#F8F8F8; border: 1px solid #ccc; }
+#secondary_column form.submit_newsletter input.email_field:-moz-placeholder {color:#444 !important;-webkit-font-smoothing:antialiased}
+#secondary_column form.submit_newsletter input.email_field::-moz-placeholder {color:#444 !important;-webkit-font-smoothing:antialiased}
+#secondary_column form.submit_newsletter input.email_field::-webkit-input-placeholder {color:#444 !important;-webkit-font-smoothing:antialiased}
+
+.warning_wrapper { width: 100%; background-color: #f6f6f6; position: relative; z-index: 20; margin: -60px 0 30px 0; }
+.warning_wrapper span { color: #f87258; }
+img.arrow_down_warning { display: block; width: 41px; height: 20px; padding-top: 0; margin: 0 auto; }
+.warning_container { padding: 15px 20px 30px 20px; text-align: center; font-size: 1em; font-weight: bold; }
+img.warning_icon { display: inline-block; width: 25px; height: 25px; margin-right: 10px; }
+
+#page .accordion { border-bottom: none; border-top: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; border-left: 1px solid #c1c1c1; }
+
+/* temp */
+.upper_footer .share { float: none; margin-left: auto; margin-right: auto; }
+/********/
+
+@media (min-width: 600px){
+	#site_footer .sitemap_block { width: 33.33%; }
+}
+@media (min-width: 769px){
+	.pointer_mask { height:40px; top:-20px; }
+}
+@media (min-width: 769px){
+	.pointer_mask .arrow_mask{ border-bottom:20px solid white; }
+	.students_module { padding-top:20px; }
+	#students_home .module > .grid_layout { padding:40px; }
+	nav.slide_nav .prev_btn, nav.slide_nav .next_btn { display: block; }
+	.cycle-slideshow img { width: 50%; display: inline-block; }
+	.cycle-slideshow { width: 90%; }
+	.caption_container { display: inline-block; width: 50%; padding: 0 0 0 20px; }
+	aside.students_slideshow { height:450px; max-height:450px; }
+	#main_container #site_body .site_header_area .site_header .nav_area > div:nth-child(2) .head-link ul ul { min-width:130px; } /* get started */
+	#main_container #site_body .site_header_area .site_header .nav_area > div:nth-child(3) {} /* your internship */
+	#main_container #site_body .site_header_area .site_header .nav_area > div:nth-child(4) .head-link ul ul {} /* resources */
+}
+@media (min-width: 1200px){
+	#main_container #site_body .site_header_area .site_header .nav_area > div:nth-child(2) .head-link ul ul { min-width:150px; } /* get started */
+	#main_container #site_body .site_header_area .site_header .nav_area > div:nth-child(3) {} /* your internship */
+	#main_container #site_body .site_header_area .site_header .nav_area > div:nth-child(4) .head-link ul ul {} /* resources */
+}

@@ -1,0 +1,124 @@
+var nav_search = {
+	nav_search_open: false,
+	nav_search_orig_size: null,
+	init: function() {
+		nav_search.initListeners();
+	},
+	initListeners: function(){
+		$('.nav_search .search_submit').click(function() {
+			/* Open/Close/Submit via Top Nav search icon */
+			if (nav_search.nav_search_orig_size == null) { nav_search.nav_search_orig_size = $('.nav_search .search_field').css('width'); }
+			if ($('.nav_search .search_field').css('width') == nav_search.nav_search_orig_size) {
+				//console.log('click: opening');
+				$('.nav_search .search_field').css('width','100%');
+				$('.nav_search .search_field').focus();
+				nav_search.nav_search_open = true;
+			} else {
+				if ($('.nav_search .search_field').val()) {
+					//console.log('click: submitting');
+					$('.nav_search').submit();
+				} else {
+					//console.log('click: closing');
+					$('.nav_search .search_field').css('width', nav_search.nav_search_orig_size); 
+					nav_search.nav_search_open = false;
+				}
+			}
+		});
+		
+		// append google specific search filter
+		$("form.nav_search").submit(function(event) {
+		  if ( $( "input:first" ).val() != "") {
+			$( "input:first" ).val($("input:first").val() + " site:jpl.nasa.gov/edu");
+			return true;
+		  }
+		  event.preventDefault();
+		});
+		$("form.overlay_search").submit(function(event) {
+		  if (document.getElementById('main_nav_overlay_search').value != "") {
+			document.getElementById('main_nav_overlay_search').value = document.getElementById('main_nav_overlay_search').value + " site:jpl.nasa.gov/edu";
+			return true;
+		  }
+		  event.preventDefault();
+		});
+		
+	  	/* url hash change detection */
+		if (typeof disablehash == 'undefined'){
+			//console.log("hash check");
+			if (window.location.hash) {
+				var hTag = window.location.hash.substring(1);
+				var aTag = $("a[name='"+ hTag +"']");
+				window.location.hash = '';
+				if(aTag.length){
+					$('html, body').animate({
+						scrollTop: aTag.offset().top - $('.site_header').outerHeight(true) - 15
+					});
+				}
+				window.location.hash = hTag;
+			}
+			$('a[href^="#"]').click(function(event){
+				event.preventDefault();
+				var hTag = $(this).attr('href').substring(1);
+				var aTag = $("a[name='"+ hTag +"']");
+				if(aTag.length){
+					$('html, body').animate({
+						scrollTop: aTag.offset().top - $('.site_header').outerHeight(true) - 15
+					});
+				}
+				window.location.hash = hTag;
+				return false;
+			});
+			$('a[href^="/edu/"]').click(function(event){
+				event.preventDefault();
+				var hTag = $(this).attr('href');
+				hTag = hTag.substr(hTag.indexOf("#") + 1);
+				var aTag = $("a[name='"+ hTag +"']");
+				if(aTag.length){
+					$('html, body').animate({
+						scrollTop: aTag.offset().top - $('.site_header').outerHeight(true) - 15
+					});
+					window.location.hash = hTag;
+				}else{
+					window.location = $(this).attr('href');
+				}
+				return false;
+			});
+			$(window).on('hashchange', function(event) {
+				return false;
+			});
+		};
+
+		// bind change event to select
+		$('#dynamic_select_url').bind('change', function () {
+		  var url = $(this).val(); // get selected value
+		  if (url) { // require a URL
+			  window.location = url; // redirect
+		  }
+		  return false;
+		});
+		/* accordion */
+		function close_accordion_section() {
+			$('.accordion .accordion-section-title').removeClass('active');
+			$('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+		}
+		$('.accordion-section-title').click(function(e) {
+			// Grab current anchor value
+			var currentAttrValue = $(this).attr('href');
+			if($(this).hasClass("active")){
+				close_accordion_section();
+			}else{
+				close_accordion_section();
+				// Add active class to section title
+				$(this).addClass('active');
+				// Open up the hidden content panel
+				$('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+			}
+			e.preventDefault();
+		});
+	}
+};
+/* ----- end nav_search ----- */
+
+/* init onReady */
+$(function() {
+    nav_search.init();
+});
